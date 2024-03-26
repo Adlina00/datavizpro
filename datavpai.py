@@ -214,8 +214,9 @@ with st.expander("App Overview", expanded=False):
 # Alternatively, just using a text-input box
 
 if load_dotenv():
-    openai_api_key = os.getenv("OPENAI_API_KEY")
-
+    client = OpenAI(
+    api_key=os.getenv("OPENAI_API_KEY")
+)
   
     options = st.radio(
         "Data Usage", options=["Upload file", "Use Data in Storage"], horizontal=True
