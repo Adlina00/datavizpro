@@ -6,6 +6,7 @@ import openai
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
+from ast import main
 
 load_dotenv()
 client = OpenAI(
@@ -249,3 +250,6 @@ if API:
       else:
           # Display a warning if the uploaded data is empty
           st.warning("The given data is empty.")
+
+if __name__ == "__main__":
+    main()
