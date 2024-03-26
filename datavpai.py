@@ -216,22 +216,20 @@ with st.expander("App Overview", expanded=False):
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
-if openai_api_key:
-  os.environ["OPENAI_API_KEY"] = openai_api_key
+os.environ["OPENAI_API_KEY"] = openai_api_key
   
-
-  options = st.radio(
+options = st.radio(
       "Data Usage", options=["Upload file", "Use Data in Storage"], horizontal=True
   )
-  if options == "Upload file":
+if options == "Upload file":
       # Get data uploaded by the user
       df = get_data()
-  else:
+else:
       df = db.storage.dataframes.get(key="spectra-csv")
   
   
   # If data is uploaded successfully
-  if df is not None:
+if df is not None:
       # Create an expander to optionally display the uploaded data
       with st.expander("Show data"):
           st.write(df)
