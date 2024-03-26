@@ -222,7 +222,7 @@ if load_dotenv():
   
 
 options = st.radio(
-      "Data Usage", options=["Upload file", "Use Data in Storage"], horizontal=True
+      "Data Usage", options=["Upload file"], horizontal=True
   )
 if options == "Upload file":
       # Get data uploaded by the user
