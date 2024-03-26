@@ -3,6 +3,5 @@ openai
 pandas
 python-dotenv
 streamlit
-google-generativeai
 chromadb
 sqlite
