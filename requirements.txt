@@ -5,3 +5,4 @@ python-dotenv
 streamlit
 chromadb
 sqlite3==3.41.2
+gpt-3.5-turbo
