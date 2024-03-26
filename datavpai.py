@@ -212,7 +212,7 @@ with st.expander("App Overview", expanded=False):
 # key_check() # A function to deal with KEY availability
 # Alternatively, just using a text-input box
 
-API = st.text_input("Enter Your Open API key", type = "password")
+API = openai.
 
 if API:
   os.environ["OPENAI_API_KEY"] = API
