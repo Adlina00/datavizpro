@@ -213,13 +213,10 @@ with st.expander("App Overview", expanded=False):
 # key_check() # A function to deal with KEY availability
 # Alternatively, just using a text-input box
 
-load_dotenv()
-client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY")
-)
+openai_secret_key = st.secrets["openai_secret_key"]
 
-if load_dotenv():
-  api_key=os.getenv("OPENAI_API_KEY")
+if openai_secret_key:
+  os.environ["OPENAI_API_KEY"] = openai_secret_key
   
 
   options = st.radio(
