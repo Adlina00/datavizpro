@@ -227,8 +227,7 @@ options = st.radio(
 if options == "Upload file":
       # Get data uploaded by the user
       df = get_data()
-else:
-      df = db.storage.dataframes.get(key="spectra-csv")
+
   
   
   # If data is uploaded successfully
