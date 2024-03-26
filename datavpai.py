@@ -213,22 +213,22 @@ with st.expander("App Overview", expanded=False):
 # key_check() # A function to deal with KEY availability
 # Alternatively, just using a text-input box
 
-load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
+if load_dotenv():
+    openai_api_key = os.getenv("OPENAI_API_KEY")
 
   
-options = st.radio(
-      "Data Usage", options=["Upload file", "Use Data in Storage"], horizontal=True
-  )
-if options == "Upload file":
-      # Get data uploaded by the user
-      df = get_data()
-else:
-      df = db.storage.dataframes.get(key="spectra-csv")
-  
-  
-  # If data is uploaded successfully
-if df is not None:
+    options = st.radio(
+        "Data Usage", options=["Upload file", "Use Data in Storage"], horizontal=True
+    )
+    if options == "Upload file":
+        # Get data uploaded by the user
+        df = get_data()
+    else:
+        df = db.storage.dataframes.get(key="spectra-csv")
+    
+    
+    # If data is uploaded successfully
+    if df is not None:
       # Create an expander to optionally display the uploaded data
       with st.expander("Show data"):
           st.write(df)
