@@ -1,5 +1,7 @@
-databutton==0.38.3
-openai==1.14.3
-pandas==2.2.1
-python-dotenv==1.0.1
-streamlit==1.32.2
+databutton
+openai
+pandas
+python-dotenv
+streamlit
+google-generativeai
+chromadb
