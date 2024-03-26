@@ -4,6 +4,6 @@ pandas
 python-dotenv
 streamlit
 chromadb
-sqlite
+SQLite
 re
 os
