@@ -186,8 +186,8 @@ st.set_option("deprecation.showPyplotGlobalUse", False)
 @st.cache_resource
 def display_app_header():
     """Display the header of the Streamlit app."""
-    st.image('logo.png')
-    
+    st.title("1️⃣ One-Prompt Charts 📊 ")
+    st.markdown("***Prompt about your data, and see it visualized** ✨ This app runs on the power of your prompting. As here in Databutton HQ, we envision, '**Prompting is the new programming.**'*")
 
 
 # Display the header of the app
@@ -213,23 +213,24 @@ with st.expander("App Overview", expanded=False):
 # key_check() # A function to deal with KEY availability
 # Alternatively, just using a text-input box
 
-if load_dotenv():
-    client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY")
-)
+API = st.secrets["openai_secret_key"]
+
+if API:
+  os.environ["OPENAI_API_KEY"] = API
   
-    options = st.radio(
-        "Data Usage", options=["Upload file", "Use Data in Storage"], horizontal=True
-    )
-    if options == "Upload file":
-        # Get data uploaded by the user
-        df = get_data()
-    else:
-        df = db.storage.dataframes.get(key="spectra-csv")
-    
-    
-    # If data is uploaded successfully
-    if df is not None:
+
+  options = st.radio(
+      "Data Usage", options=["Upload file", "Use Data in Storage"], horizontal=True
+  )
+  if options == "Upload file":
+      # Get data uploaded by the user
+      df = get_data()
+  else:
+      df = db.storage.dataframes.get(key="spectra-csv")
+  
+  
+  # If data is uploaded successfully
+  if df is not None:
       # Create an expander to optionally display the uploaded data
       with st.expander("Show data"):
           st.write(df)
