@@ -216,7 +216,6 @@ with st.expander("App Overview", expanded=False):
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
-os.environ["OPENAI_API_KEY"] = openai_api_key
   
 options = st.radio(
       "Data Usage", options=["Upload file", "Use Data in Storage"], horizontal=True
