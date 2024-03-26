@@ -8,12 +8,6 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from ast import main
 
-load_dotenv()
-client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY")
-)
-
-
 # Define the model to use
 MODEL_NAME = "gpt-3.5-turbo"
 
