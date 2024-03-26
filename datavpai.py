@@ -187,8 +187,7 @@ st.set_option("deprecation.showPyplotGlobalUse", False)
 def display_app_header():
     """Display the header of the Streamlit app."""
     st.image('logo.png')
-    st.title("DataVizPro 📊 ")
-    st.markdown("**AI-Powered Data Visualization Tool** ✨")
+    
 
 
 # Display the header of the app
