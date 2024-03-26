@@ -187,7 +187,7 @@ st.set_option("deprecation.showPyplotGlobalUse", False)
 def display_app_header():
     """Display the header of the Streamlit app."""
     st.title("1️⃣ One-Prompt Charts 📊 ")
-    st.markdown("***Prompt about your data, and see it visualized** ✨ This app runs on the power of your prompting. As here in Databutton HQ, we envision, '**Prompting is the new programming.**'*")
+    st.markdown("***AI-Powered Data Visualization Tool** ✨")
 
 
 # Display the header of the app
