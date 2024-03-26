@@ -174,7 +174,7 @@ def get_data():
             df = None
         return df
     
-    return None
+    return data_upload
 
 # App UI
 
